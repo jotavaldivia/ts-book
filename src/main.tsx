@@ -3,8 +3,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Principal } from "./layouts";
 import { Home, Error } from "./pages";
 import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "react-query";
 import "./global.css";
+import { BooksProvider } from "./context/book.context";
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <BooksProvider>
+        <RouterProvider router={router} />
+      </BooksProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
