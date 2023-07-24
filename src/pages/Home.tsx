@@ -4,9 +4,9 @@ import bannerMobile from "../assets/images/banner_mobile.jpg";
 import { useBooksContext } from "../context/book.context";
 import { book } from "../models/book.model";
 const Home = () => {
-  const { isLoading, error, data } = useBooksContext();
+  const { isLoading, data } = useBooksContext();
 
-  console.log(isLoading, error, data);
+  console.log(isLoading, data);
 
   const windowWidth = window.innerWidth;
 

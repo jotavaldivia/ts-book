@@ -15,5 +15,4 @@ export interface book {
 export interface bookResponse {
   data: book[] | null;
   isLoading: boolean;
-  error: null;
 }
