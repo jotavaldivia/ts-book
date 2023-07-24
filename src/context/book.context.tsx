@@ -1,16 +1,16 @@
-import { createContext, useContext, useState } from "react";
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 import { getBooks } from "../services/book.services";
 import { bookResponse, book } from "../models/book.model";
 
 console.log(getBooks());
 const INITIAL_STATE: bookResponse = {
   isLoading: false,
-  data: null,
+  data: [],
 };
 
 const BooksContext = createContext(INITIAL_STATE);
 
-const BooksProvider = ({ children }: never) => {
+const BooksProvider = ({ children }: PropsWithChildren) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<book[]>([]);
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Logo from "../components/Logo";
 import { SearchBar } from "../components";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -54,12 +55,12 @@ const Navbar = () => {
         >
           <li>
             <a href="#" className="block text-white hover:text-gray-300 py-2">
-              Home
+              <Link to="/">Home</Link>
             </a>
           </li>
           <li>
             <a href="#" className="block text-white hover:text-gray-300 py-2">
-              Crea tu Libro
+              <Link to="/create-book">Agrega Libros</Link>
             </a>
           </li>
           <li>

@@ -1,13 +1,11 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Principal } from "./layouts";
-import { Home, Error } from "./pages";
+import { Home, Error, CreateBooks } from "./pages";
 import ReactDOM from "react-dom/client";
-import { QueryClient, QueryClientProvider } from "react-query";
 import "./global.css";
 import { BooksProvider } from "./context/book.context";
 
-const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/create-book",
+        element: <CreateBooks />,
       },
     ],
   },
@@ -27,10 +29,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BooksProvider>
-        <RouterProvider router={router} />
-      </BooksProvider>
-    </QueryClientProvider>
+    <BooksProvider>
+      <RouterProvider router={router} />
+    </BooksProvider>
   </React.StrictMode>
 );

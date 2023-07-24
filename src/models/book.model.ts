@@ -13,6 +13,6 @@ export interface book {
 }
 
 export interface bookResponse {
-  data: book[] | null;
+  data: book[];
   isLoading: boolean;
 }
