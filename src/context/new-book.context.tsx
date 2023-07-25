@@ -5,10 +5,7 @@ import {
   useContext,
   useState,
 } from "react";
-import { getBooks } from "../services/book.services";
 import { bookState, createbook } from "../models/book.model";
-
-console.log(getBooks());
 
 const INITIAL_STATE: bookState = {
   book: {
@@ -36,10 +33,37 @@ const NewBooksProvider = ({ children }: PropsWithChildren) => {
     console.log(book);
   };
 
+  const estadoInicial = {
+    lírico: false,
+    epístola: false,
+    leyenda: false,
+    fábula: false,
+    romántico: false,
+  };
+
+  const [gender, setGender] = useState(estadoInicial);
+
+  const handleCheck = (e: any) => {
+    setGender({
+      ...gender,
+      [e.target.name]: e.target.checked,
+    });
+
+    if (e.target.checked) {
+      setBook({ ...book, genre: [...book.genre, e.target.value] });
+    } else {
+      setBook({
+        ...book,
+        genre: book.genre.filter((item) => item !== e.target.value),
+      });
+    }
+  };
+
   const value = {
     book,
     setBook,
     handleSubmit,
+    handleCheck,
   };
 
   return (

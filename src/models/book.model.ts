@@ -30,4 +30,5 @@ export interface bookState {
   book: createbook;
   setBook: (book: createbook) => void;
   handleSubmit: (e: FormEvent<HTMLElement>) => void;
+  handleChange: (e: FormEvent<HTMLElement>) => void;
 }

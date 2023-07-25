@@ -2,15 +2,11 @@ import { FormEvent } from "react";
 import { useNewBooksContext } from "../context/new-book.context";
 
 const Form = () => {
-  // título, autor, género y fecha de publicación
-  console.log(useNewBooksContext());
-
-  const { book, setBook, handleSubmit } = useNewBooksContext();
-  // const { book, setBook, handleSubmit } = useNewBooksContext();
+  const { book, setBook, handleSubmit, handleCheck } = useNewBooksContext();
 
   return (
     <div>
-      <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+      <div className="max-w-xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-4">Añade tu Libro</h2>
         <form
           onSubmit={(e: FormEvent<HTMLElement>) => {
@@ -19,7 +15,7 @@ const Form = () => {
         >
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-gray-700">
-              Titulo
+              Título
             </label>
             <input
               type="text"
@@ -42,10 +38,63 @@ const Form = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="text" className="block text-gray-700">
-              Genero
+            <p className="mb-5">Género</p>
+            <label className="mr-2" htmlFor="lírico">
+              lírico
             </label>
-
+            <input
+              className="mr-2"
+              type="checkbox"
+              name="lírico"
+              id="líirico"
+              value="lírico"
+              onClick={(e) => handleCheck(e)}
+            />
+            <label className="mr-2" htmlFor="epístola">
+              epístola
+            </label>
+            <input
+              className="mr-2"
+              type="checkbox"
+              name="epístola"
+              id="epístola"
+              value="epístola"
+              onClick={(e) => handleCheck(e)}
+            />
+            <label className="mr-2" htmlFor="leyenda">
+              leyenda
+            </label>
+            <input
+              className="mr-2"
+              type="checkbox"
+              name="leyenda"
+              id="leyenda"
+              value="leyenda"
+              onClick={(e) => handleCheck(e)}
+            />
+            <label className="mr-2" htmlFor="fábula">
+              fábula
+            </label>
+            <input
+              className="mr-2"
+              type="checkbox"
+              name="fábula"
+              id="fábula"
+              value="fábula"
+              onClick={(e) => handleCheck(e)}
+            />
+            <label className="mr-2" htmlFor="romántico">
+              romántico
+            </label>
+            <input
+              className="mr-2"
+              type="checkbox"
+              name="romántico"
+              id="romántico"
+              value="romántico"
+              onClick={(e) => handleCheck(e)}
+            />
+            {/* 
             <select
               name="genre"
               id="genre"
@@ -53,9 +102,12 @@ const Form = () => {
               onChange={(e) => setBook({ ...book, genre: [e.target.value] })}
             >
               <option value="otro">Seleccione...</option>
-              <option value="Hombre">Hombre</option>
-              <option value="Mujer">Mujer</option>
-            </select>
+              <option value="lírico">lírico</option>
+              <option value="epístola">epístola</option>
+              <option value="leyenda">leyenda</option>
+              <option value="fábula">fábula</option>
+              <option value="romántico">romantico</option>
+            </select> */}
           </div>
           <div className="mb-4">
             <label htmlFor="date" className="block text-gray-700">

@@ -2,7 +2,7 @@ import { PropsWithChildren, createContext, useContext, useState } from "react";
 import { getBooks } from "../services/book.services";
 import { bookResponse, book } from "../models/book.model";
 
-console.log(getBooks());
+//console.log(getBooks());
 const INITIAL_STATE: bookResponse = {
   isLoading: false,
   data: [],
@@ -19,7 +19,7 @@ const BooksProvider = ({ children }: PropsWithChildren) => {
       .then((response) => {
         setIsLoading(false);
         setData(response);
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -30,7 +30,6 @@ const BooksProvider = ({ children }: PropsWithChildren) => {
     isLoading,
     data,
   };
-  console.log(value);
 
   return (
     <BooksContext.Provider value={value}>{children}</BooksContext.Provider>
