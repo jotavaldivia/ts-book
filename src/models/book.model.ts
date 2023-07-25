@@ -16,3 +16,16 @@ export interface bookResponse {
   data: book[];
   isLoading: boolean;
 }
+
+export interface createbook {
+  name: string;
+  authors: string;
+  genre: string[];
+  date: Date;
+}
+
+export interface bookState {
+  book: createbook;
+  setBook: (book: createbook) => void;
+  handleSubmit: (e: Event) => void;
+}

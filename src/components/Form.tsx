@@ -1,52 +1,75 @@
+import { useNewBooksContext } from "../context/new-book.context";
+
 const Form = () => {
   // título, autor, género y fecha de publicación
+  console.log(useNewBooksContext());
+
+  const { book, setBook, handleSubmit } = useNewBooksContext();
+  // const { book, setBook, handleSubmit } = useNewBooksContext();
+
   return (
     <div>
       <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-4">Añade tu Libro</h2>
-        <form>
+        <form
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
+        >
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-gray-700">
               Titulo
             </label>
             <input
               type="text"
-              id="nombre"
-              name="nombre"
+              id="title"
+              name="title"
               className="mt-1 p-2 border w-full rounded"
+              onChange={(e) => setBook({ ...book, name: e.target.value })}
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">
+            <label htmlFor="text" className="block text-gray-700">
               Autor
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
+              type="text"
+              id="title"
+              name="title"
               className="mt-1 p-2 border w-full rounded"
+              onChange={(e) => setBook({ ...book, authors: e.target.value })}
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">
+            <label htmlFor="text" className="block text-gray-700">
               Genero
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
+
+            <select
+              name="genre"
+              id="genre"
               className="mt-1 p-2 border w-full rounded"
-            />
+              onChange={(e) => setBook({ ...book, genre: [e.target.value] })}
+            >
+              <option value="" selected>
+                Seleccione...
+              </option>
+              <option value="Hombre">Hombre</option>
+              <option value="Mujer">Mujer</option>
+            </select>
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">
+            <label htmlFor="date" className="block text-gray-700">
               Fecha de Publicación
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
+              type="date"
+              id="date"
+              name="date"
               className="mt-1 p-2 border w-full rounded"
+              onChange={(e) =>
+                setBook({ ...book, date: new Date(e.target.value) })
+              }
             />
           </div>
 

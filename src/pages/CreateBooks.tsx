@@ -1,9 +1,12 @@
 import { Form } from "../components";
+import { NewBooksProvider } from "../context/new-book.context";
 
 const CreateBooks = () => {
   return (
     <div>
-      <Form />
+      <NewBooksProvider>
+        <Form />
+      </NewBooksProvider>
     </div>
   );
 };
