@@ -5,6 +5,7 @@ import { Home, Error, CreateBooks } from "./pages";
 import ReactDOM from "react-dom/client";
 import "./global.css";
 import { BooksProvider } from "./context/book.context";
+import Search from "./pages/Search";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/create-book",
         element: <CreateBooks />,
+      },
+      {
+        path: "/:query",
+        element: <Search />,
       },
     ],
   },
