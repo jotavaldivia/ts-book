@@ -1,8 +1,9 @@
-import { FormEvent } from "react";
+import { FormEvent, ChangeEvent } from "react";
 import { useNewBooksContext } from "../context/new-book.context";
 
 const Form = () => {
-  const { book, setBook, handleSubmit, handleCheck } = useNewBooksContext();
+  const { book, setBook, handleSubmit, handleInputChange } =
+    useNewBooksContext();
 
   return (
     <div>
@@ -48,7 +49,7 @@ const Form = () => {
               name="lírico"
               id="líirico"
               value="lírico"
-              onClick={(e) => handleCheck(e)}
+              onClick={(e) => handleInputChange(e)}
             />
             <label className="mr-2" htmlFor="epístola">
               epístola
@@ -59,7 +60,7 @@ const Form = () => {
               name="epístola"
               id="epístola"
               value="epístola"
-              onClick={(e) => handleCheck(e)}
+              onClick={(e) => handleInputChange(e)}
             />
             <label className="mr-2" htmlFor="leyenda">
               leyenda
@@ -70,7 +71,7 @@ const Form = () => {
               name="leyenda"
               id="leyenda"
               value="leyenda"
-              onClick={(e) => handleCheck(e)}
+              onClick={(e) => handleInputChange(e)}
             />
             <label className="mr-2" htmlFor="fábula">
               fábula
@@ -81,7 +82,7 @@ const Form = () => {
               name="fábula"
               id="fábula"
               value="fábula"
-              onClick={(e) => handleCheck(e)}
+              onClick={(e) => handleInputChange(e)}
             />
             <label className="mr-2" htmlFor="romántico">
               romántico
@@ -92,7 +93,7 @@ const Form = () => {
               name="romántico"
               id="romántico"
               value="romántico"
-              onClick={(e) => handleCheck(e)}
+              onClick={(e) => handleInputChange(e)}
             />
             {/* 
             <select

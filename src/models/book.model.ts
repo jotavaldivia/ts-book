@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
 
 export interface book {
   url: string;
@@ -30,5 +30,5 @@ export interface bookState {
   book: createbook;
   setBook: (book: createbook) => void;
   handleSubmit: (e: FormEvent<HTMLElement>) => void;
-  handleChange: (e: FormEvent<HTMLElement>) => void;
+  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }

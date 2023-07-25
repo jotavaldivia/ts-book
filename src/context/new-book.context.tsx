@@ -1,4 +1,5 @@
 import {
+  ChangeEvent,
   FormEvent,
   PropsWithChildren,
   createContext,
@@ -16,6 +17,7 @@ const INITIAL_STATE: bookState = {
   },
   setBook: () => {},
   handleSubmit: () => {},
+  handleInputChange: () => void {},
 };
 
 const NewBooksContext = createContext(INITIAL_STATE);
@@ -43,7 +45,7 @@ const NewBooksProvider = ({ children }: PropsWithChildren) => {
 
   const [gender, setGender] = useState(estadoInicial);
 
-  const handleCheck = (e: any) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setGender({
       ...gender,
       [e.target.name]: e.target.checked,
@@ -63,7 +65,7 @@ const NewBooksProvider = ({ children }: PropsWithChildren) => {
     book,
     setBook,
     handleSubmit,
-    handleCheck,
+    handleInputChange,
   };
 
   return (
