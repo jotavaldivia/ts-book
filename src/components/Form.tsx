@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import { useNewBooksContext } from "../context/new-book.context";
 
 const Form = () => {
@@ -12,7 +13,7 @@ const Form = () => {
       <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-4">Añade tu Libro</h2>
         <form
-          onSubmit={(e) => {
+          onSubmit={(e: FormEvent<HTMLElement>) => {
             handleSubmit(e);
           }}
         >
@@ -51,9 +52,7 @@ const Form = () => {
               className="mt-1 p-2 border w-full rounded"
               onChange={(e) => setBook({ ...book, genre: [e.target.value] })}
             >
-              <option value="" selected>
-                Seleccione...
-              </option>
+              <option value="otro">Seleccione...</option>
               <option value="Hombre">Hombre</option>
               <option value="Mujer">Mujer</option>
             </select>

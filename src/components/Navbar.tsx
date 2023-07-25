@@ -54,19 +54,19 @@ const Navbar = () => {
           } sm:flex sm:flex-row space-x-4 lg:space-x-8 text-center lg:text-left`}
         >
           <li>
-            <a href="#" className="block text-white hover:text-gray-300 py-2">
+            <span className="block text-white hover:text-gray-300 py-2">
               <Link to="/">Home</Link>
-            </a>
+            </span>
           </li>
           <li>
-            <a href="#" className="block text-white hover:text-gray-300 py-2">
+            <span className="block text-white hover:text-gray-300 py-2">
               <Link to="/create-book">Agrega Libros</Link>
-            </a>
+            </span>
           </li>
           <li>
-            <a href="#" className="block text-white hover:text-gray-300 py-2">
+            <span className="block text-white hover:text-gray-300 py-2">
               Favoritos
-            </a>
+            </span>
           </li>
         </ul>
       </div>
