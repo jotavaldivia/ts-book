@@ -3,6 +3,7 @@ import bannerDesktop from "../assets/images/banner.jpg";
 import bannerMobile from "../assets/images/banner_mobile.jpg";
 import { useBooksContext } from "../context/book.context";
 import { book } from "../models/book.model";
+import Book from "../components/Book";
 const Home = () => {
   const { isLoading, data } = useBooksContext();
 
@@ -27,16 +28,8 @@ const Home = () => {
 
       {isLoading ? <p>Cargando...</p> : null}
       <ul className="flex justify-center flex-wrap mt-10">
-        {data?.map((book: book, index) => (
-          <li
-            className="flex justify-center p-4 m-3 border border-black max-w-sm "
-            key={index}
-          >
-            <p>{book.name}</p>
-            <p>{book.authors[0]}</p>
-            <p>{book.numberOfPages}</p>
-            <p>{book.mediaType}</p>
-          </li>
+        {data?.map((book: book) => (
+          <Book data={book} />
         ))}
       </ul>
     </>

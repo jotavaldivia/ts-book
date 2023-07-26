@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getBook } from "../services/book.services";
 import { book } from "../models/book.model";
+import Book from "../components/Book";
 
 const Search = () => {
   const { query } = useParams();
@@ -20,17 +21,16 @@ const Search = () => {
 
   return (
     <div>
-      <h1>Hola soy el buscador</h1>
+      <div
+        className="flex justify-center mt-5
+      "
+      >
+        {data.length === 0 && <p>No hay informacion del titulo buscado...</p>}
 
-      {data.map((book: book) => {
-        return (
-          <div key={book.isbn}>
-            <h2>{book.name}</h2>
-            <p>{book.authors}</p>
-            <p>{book.characters}</p>
-          </div>
-        );
-      })}
+        {data.map((book: book) => {
+          return <Book data={book} />;
+        })}
+      </div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import ReactDOM from "react-dom/client";
 import "./global.css";
 import { BooksProvider } from "./context/book.context";
 import Search from "./pages/Search";
+import BookDetails from "./pages/BookDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/:query",
         element: <Search />,
+      },
+      {
+        path: "/details/:query",
+        element: <BookDetails />,
       },
     ],
   },

@@ -32,3 +32,14 @@ export interface bookState {
   handleSubmit: (e: FormEvent<HTMLElement>) => void;
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
+
+export type bookProps = {
+  data: {
+    name: string;
+    authors: string[];
+    numberOfPages: number;
+    mediaType: string;
+    isbn: string;
+  };
+  index?: number;
+};
