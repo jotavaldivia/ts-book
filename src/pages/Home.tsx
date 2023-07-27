@@ -22,11 +22,13 @@ const Home = () => {
         )}
       </div>
 
-      <h2 className="text-center mt-5 text-4xl text-slate-950">
+      <h2 className="text-center mt-5 text-4xl text-white-primary ">
         Lista de libros más vendidos
       </h2>
 
-      {isLoading ? <p>Cargando...</p> : null}
+      {isLoading ? (
+        <h3 className="text-white-primary text-center mt-10">Cargando...</h3>
+      ) : null}
       <ul className="flex justify-center flex-wrap mt-10">
         {data?.map((book: book) => (
           <Book data={book} />

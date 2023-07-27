@@ -25,7 +25,11 @@ const Search = () => {
         className="flex justify-center mt-5
       "
       >
-        {data.length === 0 && <p>No hay informacion del titulo buscado...</p>}
+        {data.length === 0 && (
+          <p className="p-3 text-white-primary">
+            No hay informacion del titulo buscado...
+          </p>
+        )}
 
         {data.map((book: book) => {
           return <Book data={book} />;

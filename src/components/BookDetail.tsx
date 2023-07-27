@@ -19,15 +19,15 @@ const BookDetail = ({ data }: dataProps) => {
     newData || {};
 
   return (
-    <div className="flex flex-col items-center">
-      <h1>Detalles del libro</h1>
-      <p>{name}</p>
-      <p>{country}</p>
-      <p>{isbn}</p>
-      <p>{mediaType}</p>
-      <p>{numberOfPages}</p>
-      <p>{publisher}</p>
-      <p>{released}</p>
+    <div className="flex flex-col items-center border border-slate-600 mt-10">
+      <h1 className="p-3 text-white-primary">Detalles del libro</h1>
+      <p className="p-3 text-white-primary">{name}</p>
+      <p className="p-3 text-white-primary">{country}</p>
+      <p className="p-3 text-white-primary">{isbn}</p>
+      <p className="p-3 text-white-primary">{mediaType}</p>
+      <p className="p-3 text-white-primary">{numberOfPages}</p>
+      <p className="p-3 text-white-primary">{publisher}</p>
+      <p className="p-3 text-white-primary">{released}</p>
     </div>
   );
 };

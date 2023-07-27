@@ -18,7 +18,9 @@ const BookDetails = () => {
   }, [query]);
 
   console.log(query);
-  return <div>{<BookDetail data={data} />}</div>;
+  return (
+    <div className="flex justify-center">{<BookDetail data={data} />}</div>
+  );
 };
 
 export default BookDetails;
