@@ -65,7 +65,7 @@ const Navbar = () => {
           </li>
           <li>
             <span className="block text-white hover:text-gray-300 py-2">
-              Favoritos
+              <Link to="/favorites">Favoritos</Link>
             </span>
           </li>
         </ul>

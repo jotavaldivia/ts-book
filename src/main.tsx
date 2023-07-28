@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Principal } from "./layouts";
-import { Home, Error, CreateBooks } from "./pages";
+import { Home, Error, CreateBooks, Favorites } from "./pages";
 import ReactDOM from "react-dom/client";
 import "./global.css";
 import { BooksProvider } from "./context/book.context";
@@ -28,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/details/:query",
         element: <BookDetails />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
       },
     ],
   },

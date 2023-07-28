@@ -42,4 +42,5 @@ export type bookProps = {
     isbn: string;
   };
   index?: number;
+  map?: any;
 };
